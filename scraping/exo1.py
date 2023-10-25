@@ -9,4 +9,5 @@ if response.status_code == 200:
     country_divs = soup.find_all('div', {'class': 'country'})
     for country_div in country_divs:
         country = country_div.find('h3').text.strip()
-        print(f'{country}')
+        capital = country_div.find('span', {'class': 'country-capital'}).text.strip()
+        print(f'{country}: {capital}')
